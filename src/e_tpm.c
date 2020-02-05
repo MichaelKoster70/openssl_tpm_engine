@@ -186,7 +186,7 @@ static int setup_rsa_method()
 		return 0;
 
 	if (!RSA_meth_set_flags(tpm_rsa,
-				RSA_FLAG_SIGN_VER | RSA_FLAG_NO_BLINDING) ||
+				RSA_FLAG_SIGN_VER | RSA_FLAG_NO_BLINDING | RSA_FLAG_EXT_PKEY) ||
 	    !RSA_meth_set_pub_enc(tpm_rsa, tpm_rsa_pub_enc) ||
 	    !RSA_meth_set_pub_dec(tpm_rsa, tpm_rsa_pub_dec) ||
 	    !RSA_meth_set_priv_enc(tpm_rsa, tpm_rsa_priv_enc) ||
